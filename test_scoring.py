@@ -13,3 +13,8 @@ def test_session_rating_boundary_90_is_great():
 
 # TODO: add at least one more test, e.g. a boundary case for "Skip" (a score
 # of 59) or the exact boundary for "Good" (a score of 80).
+
+
+def test_session_rating_boundary_80_is_good():
+    # 80 is the exact lower edge of "Good"; catches off-by-one (> vs >=) bugs.
+    assert session_rating(80) == "Good"
